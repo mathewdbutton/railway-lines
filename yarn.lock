@@ -5201,9 +5201,9 @@ vue-template-es2015-compiler@^1.5.3:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.5.3.tgz#22787de4e37ebd9339b74223bc467d1adee30545"
 
-"vue-timeline@git+ssh://git@github.com:mathewdbutton/vue-timeline.git":
+"vue-timeline@git+https://github.com/mathewdbutton/vue-timeline.git":
   version "1.0.0"
-  resolved "git+ssh://git@github.com:mathewdbutton/vue-timeline.git#ec179907dc49103a25072401ecfa0b2f07d648f6"
+  resolved "git+https://github.com/mathewdbutton/vue-timeline.git#2c6bfad65e48f63489ff2f8ef639669af8dcdaa0"
   dependencies:
     vue "^2.2.1"
     vuetify "^0.12.2"
