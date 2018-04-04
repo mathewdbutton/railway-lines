@@ -7,3 +7,11 @@ services:
   - postgresql
 before_script:
   - psql -c 'create database railway_lines_test;' -U postgres
+  - ./bin/rails webpacker:compile
+install:
+  - bundle install
+  - nvm install node
+  - node -v
+  - npm i -g yarn
+  - yarn
+

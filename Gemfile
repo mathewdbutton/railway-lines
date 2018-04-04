@@ -7,15 +7,13 @@ end
 
 ruby '2.5.0'
 
-# profiling tool
-gem 'skylight'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 0.21.0'
-# Use Puma as the app server
-gem 'puma', '~> 3.7'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -60,6 +58,14 @@ group :development do
   gem 'spring'
   gem 'pry-rails', '~> 0.3.6'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :development, :production do
+  # Use Puma as the app server
+  gem 'puma', '~> 3.7'
+
+  # profiling tool
+  gem 'skylight'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
