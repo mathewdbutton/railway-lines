@@ -1,17 +1,20 @@
 language: ruby
 rvm:
-  - 2.5.0
+- 2.5.0
 before_install:
-  - gem update --system
+- gem update --system
 services:
-  - postgresql
+- postgresql
 before_script:
-  - psql -c 'create database railway_lines_test;' -U postgres
-  - ./bin/rails webpacker:compile
+- psql -c 'create database railway_lines_test;' -U postgres
+- "./bin/rails webpacker:compile"
 install:
-  - bundle install
-  - nvm install node
-  - node -v
-  - npm i -g yarn
-  - yarn
-
+- bundle install
+- nvm install node
+- node -v
+- npm i -g yarn
+- yarn
+deploy:
+  provider: heroku
+  api_key:
+    secure: IN1+kh2/RTEHO4T+JcuOsfC2V2736ehqmRV+yCpPEyaNnBJB7rMMYvivxezWXGKj8dChG+nAPa32RYirIjHOa7F81L7tFS6A4dMtkpEX9wZyOYMsqnlj/5oMm1FbE1nD9iiZ4LVEhXbXPvbatpUUVJiHtHTujuVnZEmzNdvGavUfiyhKyH9XZthBOuiGYHbf5Y6bMJIy7lZMGydrX5nUR0qcF9i9CBn56eYly4bfcfAlGgax8ndokcDt/t/ZWS/CTvYgG2IxMSpzZ9Gg+PuwtiLr0qBa7N7u+KBy3r8U1DGGtbrecyp5KYwpDTIv3ySXHJy1wOIFPUhH7C6ik4cwCFa5jP1wlBlYjcjvVzEp9EZKSLpz6oC/AyZKvVC2yyiYeWpcVEyY/66UXWaazu6XIpNFHR13UD31iRbMJM8fyVuk1qtt0cigIiqqQcDwvv3MyCwyaiYXQ3ZWrNMPAX/EUvqekxmxOJ/izbB3xPgP8Fk9Cj16B/Tc2j/X7cnZOTOXyW6DkGuSAqjVlbuilaqrjIrnKk7F7QXQ7E65SCo45LwEfZTvrmm1mpS2HLgCIE2BJToJwAO0XpBu42BKNcC/GWoOQcem6aP6+y9wwsMNlhYZMEUo8CWSVdu3ompuUz5djmPUGGq/gY75XtmrohYeZwlQLQlhulWOv5RAR4au4s4=
