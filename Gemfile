@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# error management tool
+gem 'sentry-raven', '~> 2.7'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -65,9 +68,9 @@ group :development, :production do
   gem 'puma', '~> 3.7'
 
   # profiling tool
-  gem 'skylight'
+  gem 'skylight', '~> 1.6'
 
-  gem 'sentry-raven'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

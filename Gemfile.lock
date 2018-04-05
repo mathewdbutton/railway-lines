@@ -227,8 +227,8 @@ DEPENDENCIES
   rspec-rails (~> 3.6)
   sass-rails (~> 5.0)
   selenium-webdriver
-  sentry-raven
-  skylight
+  sentry-raven (~> 2.7)
+  skylight (~> 1.6)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
