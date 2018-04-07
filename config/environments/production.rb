@@ -86,6 +86,11 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  Raven.configure do |config|
+    # This ENV VAR has also been set in TravisCI
+    config.dsn = ENV.fetch('SENTRY_BACKEND_DSN')
+  end
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
