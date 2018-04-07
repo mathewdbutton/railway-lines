@@ -52,6 +52,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate', '~> 2.7'
 
   gem 'foreman', '~> 0.64'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -69,8 +70,10 @@ group :development, :production do
 
   # profiling tool
   gem 'skylight', '~> 1.6'
+end
 
-
+group :test do
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

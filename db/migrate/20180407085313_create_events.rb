@@ -5,6 +5,7 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.string :description
       t.string :caption
       t.datetime :event_date
+      t.belongs_to :timeline, index: true
       t.timestamps
     end
   end
