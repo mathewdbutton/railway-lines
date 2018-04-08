@@ -1,32 +1,43 @@
-require 'rails_helper'
-
 RSpec.describe Api::EventsController, type: :request do
 
   let(:endpoint) { '/api/events'}
-  describe 'GET #create' do
-    it 'returns http success' do
-      post endpoint
-      expect(response).to have_http_status(:success)
+  let(:params) { { title:       'event_title',
+                   caption:     'event_caption',
+                   description: 'event_description',
+                   event_date:  DateTime.current } }
+  describe 'POST #create' do
+    it 'returns http created' do
+      post endpoint, params: params
+      expect(response).to have_http_status(:created)
+    end
+
+    it 'creates an event' do
+      expect do
+        post endpoint, params: params
+      end.to change { Event.count }.by(1)
+    end
+
+    it 'returns a location header' do
+      post endpoint, params: params
+      expect(response.location).to_not be_nil
     end
   end
 
-  describe 'GET #update' do
-    let(:event_id) {'2'}
-    context 'put' do
+  describe '#update' do
+    let(:resource_id) { '2' }
+    context 'PUT' do
       it 'returns http success' do
-        patch "#{endpoint}/#{event_id}"
+        patch "#{endpoint}/#{resource_id}"
         expect(response).to have_http_status(:success)
       end
     end
 
-    context 'patch' do
+    context 'PATCH' do
       it 'returns http success' do
-        patch "#{endpoint}/#{event_id}"
+        patch "#{endpoint}/#{resource_id}"
         expect(response).to have_http_status(:success)
       end
     end
-
-
   end
 
 end

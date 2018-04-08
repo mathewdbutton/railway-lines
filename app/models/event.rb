@@ -13,5 +13,5 @@
 #
 
 class Event < ApplicationRecord
-  belongs_to :timeline
+  belongs_to :timeline, optional: true
 end
