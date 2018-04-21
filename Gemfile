@@ -33,8 +33,15 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-#
+gem 'bcrypt', '~> 3.1.11'
+
+# JSON Web Token authentication
+gem 'jwt', '~> 2.1.0'
+
+# Simple service object gem
+gem 'simple_command', '~> 0.0.9'
+
+#json serialisation
 gem 'fast_jsonapi', '~> 1.1'
 
 # error management tool

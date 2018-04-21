@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: timelines
+# Table name: users
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -8,9 +8,6 @@
 #  updated_at :datetime         not null
 #
 
-class TimelineSerializer
-  include FastJsonapi::ObjectSerializer
-  attributes :name
-  has_many :events, serializer: :event
-  set_type :timeline
+class User < ApplicationRecord
+  has_secure_password
 end
