@@ -8,7 +8,7 @@ class ApplicationController < ActionController::API
 
   def authenticate_request
     @current_user = Authorisation::RequestAuthorisation.call(request.headers).result
-    render json: { error: "User not authorised"}, status: :unauthorized unless @current_user
+    render json: { error: 'User not authorised'}, status: :unauthorized unless @current_user
   end
 
   def set_raven_context
