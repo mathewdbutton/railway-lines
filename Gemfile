@@ -62,6 +62,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rubocop', '~> 0.55.0', require: false
+
   gem 'annotate', '~> 2.7'
 
   gem 'foreman', '~> 0.64'
