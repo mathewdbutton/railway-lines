@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :events, only: %i(create update)
     resources :timelines, only: %i(show index)
     post 'authenticate', to: 'authentication#authenticate'
-    resources :users, only: %i(create)
+    resources :users, only: %i(create update)
   end
 
 end

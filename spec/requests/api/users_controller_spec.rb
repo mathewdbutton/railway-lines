@@ -27,4 +27,24 @@ RSpec.describe Api::UsersController, type: :request do
       end
     end
   end
+
+  describe 'PATCH #update' do
+
+    let(:params) {{name: 'fred'}}
+    let(:user) {create(:user)}
+    let(:headers) {{Authorization: login_user(user)}}
+    context 'valid request' do
+      it 'responds with 204' do
+        patch "#{endpoint}/#{user.id}", params: params, headers:headers
+        expect(response).to have_http_status(:no_content)
+      end
+    end
+
+    context 'unauthorised request' do
+      it 'responds with unauthorised' do
+        patch "#{endpoint}/#{user.id}", params: params
+        expect(response).to have_http_status(:unauthorized)
+      end
+    end
+  end
 end
