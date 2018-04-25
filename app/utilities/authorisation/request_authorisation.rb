@@ -8,7 +8,7 @@ module Authorisation
 
     def call
       decoded_auth_token ||= JsonWebToken.decode(http_auth_header)
-      @client = decoded_auth_token ? Client.find(decoded_auth_token[:user_id]) : nil
+      @client = decoded_auth_token ? User.find(decoded_auth_token[:user_id]) : nil
       @client || errors.add(:token, 'Invalid token') && nil
     end
 
