@@ -44,6 +44,8 @@ gem 'simple_command', '~> 0.0.9'
 #json serialisation
 gem 'fast_jsonapi', '~> 1.1'
 
+gem 'simplecov'
+
 # error management tool
 gem 'sentry-raven', '~> 2.7'
 
@@ -53,9 +55,6 @@ gem 'sentry-raven', '~> 2.7'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
 
   gem 'rspec-rails', '~> 3.6'
 
